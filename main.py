@@ -1,44 +1,19 @@
-class BankAccount:
-    def __init__(self, account_number, account_holder_name, initial_balance):
-        self.__account_number = account_number
-        self.__account_holder_name = account_holder_name
-        self.__account_balance = initial_balance
+# Python program to find the factorial of a number provided by the user.
 
-    def deposit(self, amount):
-        if amount > 0:
-            self.__account_balance += amount
-            print(f"Deposited ${amount}. New balance: ${self.__account_balance}")
-        else:
-            print("Invalid deposit amount. Amount must be greater than 0.")
+# change the value for a different result
+num = 7
 
-    def withdraw(self, amount):
-        if 0 < amount <= self.__account_balance:
-            self.__account_balance -= amount
-            print(f"Withdrew ${amount}. New balance: ${self.__account_balance}")
-        else:
-            print("Invalid withdrawal amount or insufficient funds.")
+# To take input from the user
+#num = int(input("Enter a number: "))
 
-    def display_balance(self):
-        print(f"Account Balance for {self.__account_holder_name}: ${self.__account_balance}")
+factorial = 1
 
-    @property
-    def account_balance(self):
-        return self.__account_balance
-
-
-# Example usage:
-if __name__ == "__main__":
-    # Create an instance of the BankAccount class
-    my_account = BankAccount("123456789", "John Doe", 1000)
-
-    # Deposit money
-    my_account.deposit(500)
-
-    # Withdraw money
-    my_account.withdraw(200)
-
-    # Display account balance
-    my_account.display_balance()
-
-    # Attempt to access account balance directly (this will work now)
-    print(f"Account Balance: ${my_account.account_balance}")
+# check if the number is negative, positive or zero
+if num < 0:
+   print("Sorry, factorial does not exist for negative numbers")
+elif num == 0:
+   print("The factorial of 0 is 1")
+else:
+   for i in range(1,num + 1):
+       factorial = factorial*i
+   print("The factorial of",num,"is",factorial
